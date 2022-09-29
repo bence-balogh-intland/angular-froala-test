@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-declare const FroalaEditor: any;
+// @ts-ignore
+import FroalaEditor from 'froala-editor';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent implements OnInit{
   froalaOptions: any;
 
   ngOnInit(): void {
+    (window as any).FroalaEditor = FroalaEditor;
 
     FroalaEditor.DefineIcon('myIcon', { NAME: 'my-icon', PATH: 'M7 0 L7 20 L22 20 Z'})
 
